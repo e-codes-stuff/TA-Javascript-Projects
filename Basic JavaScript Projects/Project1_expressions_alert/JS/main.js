@@ -5,7 +5,7 @@ let part2 = "with a quotation \" and backslash \\";
 let fullString = part1 + part2;
 
 // write the string + a line break
-document.write(fullPart + "<br>");
+document.write(fullString + "<br>");
 
 // show a window alert
 function window_alert() {
