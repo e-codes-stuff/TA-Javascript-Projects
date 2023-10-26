@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Basic AJAX Demo</title>
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main">
+			<h2>Get The Latest Content:</h2>
+			<div class='content' id="content">
+				<input type="button" class="button" value="Get Content" id="btn_content" onclick="getContent();"/>
+			</div>
+		<script type="text/javascript">
+			// Create a new XMLHttpRequest object
+      let xhr = new XMLHttpRequest();
+      
+      // Define that the XMLHttpRequest object will send a GET request for content.html
+      xhr.open('GET', 'content.html');
+      
+      // Define a callback that is run when the state changes
+      xhr.onreadystatechange = () => {
+          // If the readyState is 4 (completed) then display the content
+          if (xhr.readyState === 4) {
+              document.getElementById('content').innerHTML = xhr.responseText;
+          }
+      }
+      
+      // When the get content button is clicked, send the request and hide the button
+      function getContent() {
+          xhr.send();
+          document.getElementById('btn_content').style.display = 'none';
+      }
+		</script>
+    </body>
+</html>
